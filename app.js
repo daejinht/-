@@ -31,7 +31,7 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
     let score = 0; // 초기 점수 0점
 
     // 문제 1
-const q1_correct_keywords = ["철거스티커 1.5m", "철거링 체결", "전용 tool", "45 밴딩", "스티커 중간 부위 절단","중간 부위 절단", "철거스티커 1.5", "전용 툴""]; 
+const q1_correct_keywords = ["철거스티커 1.5m", "철거링 체결", "전용 tool", "45 밴딩", "스티커 중간 부위 절단","중간 부위 절단","철거스티커 1.5","전용 툴"]; 
     
     // 
     const q1_inputs = [
@@ -127,4 +127,4 @@ if (score >= 80) {
         submitBtn.disabled = false;
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-});
+}
