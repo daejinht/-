@@ -1,7 +1,7 @@
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwrdlnuBXKgoUw8ouggz3WobnCSjibthvxBLePGk1Ou3zdHpRQud17sQKj0-iQcvkk3AA/exec';
 
 document.getElementById('quizForm').addEventListener('submit', async function(event) {
-    // 1. 제출 시 페이지 새로고침 방지
+
     event.preventDefault();
 
     const submitBtn = document.getElementById('submitBtn');
@@ -12,22 +12,17 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     let wrongQuestions = []; 
     let userAnswers = {};   
 
-    // 2. 고유 ID 생성 (동명이인 구별)
     let uid = localStorage.getItem('quiz_uid');
     if (!uid) {
         uid = "ID_" + Math.random().toString(36).substr(2, 9);
         localStorage.setItem('quiz_uid', uid);
     }
 
-    // 3. 제출 시간 및 이름
     const now = new Date();
     const timeString = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
     const userName = document.getElementById('username').value;
 
-    // =========================================================
-    // 💡 [문제 1] 채점 (유의어 그룹화 적용)
-    // =========================================================
-    // 사용자가 입력한 값 (시트 기록용)
+
     const q1_raw_inputs = [
         document.getElementById('q1_in_1').value, document.getElementById('q1_in_2').value,
         document.getElementById('q1_in_3').value, document.getElementById('q1_in_4').value, document.getElementById('q1_in_5').value
@@ -63,9 +58,6 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     else { wrongQuestions.push(1); }
 
 
-    // =========================================================
-    // 💡 객관식 채점 헬퍼 함수 (2~5번, 8~10번)
-    // =========================================================
     const checkRadio = (qNum, name, answer) => {
         const checked = document.querySelector(`input[name="${name}"]:checked`);
         userAnswers[`ans${qNum}`] = checked ? checked.value : "미입력";
@@ -82,9 +74,6 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     checkRadio(5, "q5", "1"); 
 
 
-    // =========================================================
-    // 💡 [문제 6] 채점 (유의어 그룹화 적용)
-    // =========================================================
     const q6_raw_input = document.getElementById('q6_in').value;
     userAnswers.ans6 = q6_raw_input;
     const q6_input = q6_raw_input.replace(/\s+/g, '').toLowerCase();
@@ -105,9 +94,6 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     else { wrongQuestions.push(6); }
 
 
-    // =========================================================
-    // 💡 [문제 7] 단답형 채점
-    // =========================================================
     const q7_raw_input = document.getElementById('q7_in').value;
     userAnswers.ans7 = q7_raw_input;
     const q7_input = q7_raw_input.replace(/-/g, ''); 
@@ -116,17 +102,11 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     else { wrongQuestions.push(7); }
 
 
-    // =========================================================
-    // 💡 [문제 8 ~ 10] 객관식 채점
-    // =========================================================
     checkRadio(8, "q8", "3"); 
     checkRadio(9, "q9", "3"); 
     checkRadio(10, "q10", "4"); 
 
 
-    // =========================================================
-    // 🚀 구글 시트로 데이터 전송
-    // =========================================================
     const payload = {
         name: userName,
         score: score,
@@ -149,9 +129,6 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
         console.error("구글 시트 전송 중 오류 발생:", error);
     }
 
-    // =========================================================
-    // 💡 합격 / 불합격 UI 처리
-    // =========================================================
     if (score >= 80) {
         alert(`🎉 합격입니다! 제출이 완료되었습니다.\n\n(최종 점수: ${score}점)`);
         submitBtn.innerText = "제출 완료";
