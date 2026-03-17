@@ -5,7 +5,7 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     event.preventDefault();
 
     const submitBtn = document.getElementById('submitBtn');
-    submitBtn.innerText = "채점 및 전송 중...";
+    submitBtn.innerText = "채점 중";
     submitBtn.disabled = true;
 
     let score = 0;
@@ -29,10 +29,10 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     ];
     userAnswers.ans1 = q1_raw_inputs.join(", "); 
     
-    // 띄어쓰기 모두 없애고 소문자로 변환 (채점용)
+ 
     const q1_inputs = q1_raw_inputs.map(val => val.replace(/\s+/g, '').toLowerCase());
 
-    // 🌟 핵심: 묶음 안의 단어 중 하나만 입력해도 통과되도록 그룹핑
+
     const q1_concept_groups = [
         ["철거스티커1.5m", "철거스티커1.5"], // 1번 개념
         ["철거링체결"],                     // 2번 개념
@@ -43,7 +43,7 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
 
     let q1_matchCount = 0;
     q1_concept_groups.forEach(group => {
-        // 입력한 5칸 중에서, 현재 그룹의 유의어 중 하나라도 포함된 칸 찾기
+
         const foundIndex = q1_inputs.findIndex(input => 
             group.some(synonym => input.includes(synonym))
         );
@@ -130,12 +130,12 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     }
 
     if (score >= 80) {
-        alert(`🎉 합격입니다! 제출이 완료되었습니다.\n\n(최종 점수: ${score}점)`);
+        alert(`합격입니다! 제출이 완료되었습니다.\n\n(최종 점수: ${score}점)`);
         submitBtn.innerText = "제출 완료";
         submitBtn.style.backgroundColor = "#999"; 
         submitBtn.style.cursor = "not-allowed";
     } else {
-        alert(`❌ 불합격입니다.\n\n현재 점수: ${score}점\n\n80점 미만이므로 재응시해야 합니다.`);
+        alert(`불합격입니다.\n\n현재 점수: ${score}점\n\n80점 미만이므로 재응시해야 합니다.`);
         submitBtn.innerText = "제출하기"; 
         submitBtn.disabled = false;
         window.scrollTo({ top: 0, behavior: 'smooth' });
