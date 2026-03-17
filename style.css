@@ -1,0 +1,195 @@
+/* 기본 초기화 및 폰트 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* 메인 컨테이너 스타일 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.container > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* 폼 그룹 공통 스타일 (문제들) */
+.form-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-group:last-of-type {
+    border-bottom: none;
+}
+
+/* 라벨(질문) 스타일 */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+/* 텍스트 입력창 스타일 */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+/* 라디오 버튼 그룹 스타일 */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.radio-group label {
+    font-weight: 400;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* 연락처/단답형 다중 입력 구조 */
+.contact-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+.contact-label {
+    min-width: 45px;
+    font-weight: 500;
+    color: #555;
+    white-space: nowrap;
+}
+
+/* 인적사항가로 배치  */
+.info-group {
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: none;
+}
+
+.info-group label {
+    display: inline-block;
+    min-width: 80px;
+    margin-bottom: 0;
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.info-group input {
+    flex: 1;
+    width: auto;
+}
+
+/* 직급/직무 아래 선 다시 긋고, 문제 1번과 띄우기 */
+.info-last {
+    border-bottom: 1px solid #eee !important;
+    padding-bottom: 20px;
+    margin-bottom: 40px !important;
+}
+/* ========================================= */
+
+/* 제출 버튼 스타일 */
+#submitBtn {
+    width: 100%;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#submitBtn:hover {
+    background-color: #1557b0;
+}
+
+/* 결과 메시지 스타일 */
+#resultMessage {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e6f4ea;
+    color: #137333;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* 모바일 대응 */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .contact-label {
+        margin-bottom: 5px;
+    }
+}

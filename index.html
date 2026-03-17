@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특별안전교육 평가 문제(배관사)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>특별안전교육 평가 문제(배관사)</h1>
+        <p>인적사항 입력 후 문제를 풀어주세요.</p>
+
+        <form id="quizForm">
+            <div class="form-group info-group">
+                <label for="department">소속:</label>
+                <input type="text" id="department" placeholder="회사명 기입" required>
+            </div>
+
+            <div class="form-group info-group">
+                <label for="username">이름:</label>
+                <input type="text" id="username" placeholder="이름을 입력하세요" required>
+            </div>
+
+            <div class="form-group info-group info-last">
+                <label for="role">직급/직무:</label>
+                <input type="text" id="role" placeholder="직종 기입" required>
+            </div>
+
+            <div class="form-group">
+                <label>문제 1. 배관 철거 5대 원칙은?</label>
+                <div class="contact-row">
+                    <span class="contact-label">1. </span>
+                    <input type="text" id="q1_in_1" placeholder="">
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">2. </span>
+                    <input type="text" id="q1_in_2" placeholder="">
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">3. </span>
+                    <input type="text" id="q1_in_3" placeholder="">
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">4. </span>
+                    <input type="text" id="q1_in_4" placeholder="">
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">5. </span>
+                    <input type="text" id="q1_in_5" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 2. 밀폐공간 작업전 점검 사항으로 옳지 않은 것은?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="q2" value="1"> 1. 질식예방 개인보호구 착용</label>
+                    <label><input type="radio" name="q2" value="2"> 2. 산소농도 15% 이하 시 출입</label>
+                    <label><input type="radio" name="q2" value="3"> 3. 송기마스크 등 구조 및 대피용 기구 비치</label>
+                    <label><input type="radio" name="q2" value="4"> 4. 작업전 특별안전보건교육 실시</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 3. 위험물 취급 및 저장방법으로 옳지 않은 것은?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="q3" value="1"> 1. 통풍이 잘되는 찬 곳에 저장</label>
+                    <label><input type="radio" name="q3" value="2"> 2. 용기 파손에 의한 누설 주의</label>
+                    <label><input type="radio" name="q3" value="3"> 3. 습기가 많은 곳</label>
+                    <label><input type="radio" name="q3" value="4"> 4. 다른 약품 및 가연물과의 접촉을 피함</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 4. GHS의 의미는?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="q4" value="1"> 1. 고압가스</label>
+                    <label><input type="radio" name="q4" value="2"> 2. 수생환경유해성</label>
+                    <label><input type="radio" name="q4" value="3"> 3. 인화성</label>
+                    <label><input type="radio" name="q4" value="4"> 4. 경고</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 5. 가연성 액체의 성질로 옳은 것은?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="q5" value="1"> 1. 인화가 쉽다</label>
+                    <label><input type="radio" name="q5" value="2"> 2. 착화온도가 높은 것은 위험하다</label>
+                    <label><input type="radio" name="q5" value="3"> 3. 물보다 무겁다</label>
+                    <label><input type="radio" name="q5" value="4"> 4. 증기는 공기보다 가볍다</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 6. 본드 사용 작업 시 착용해야 하는 보호구를 모두 적으시오.</label>
+                <div class="contact-row">
+                    <span class="contact-label">답변: </span>
+                    <input type="text" id="q6_in" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 7. SK Hynix 중앙방재실 신고번호는?</label>
+                <div class="contact-row">
+                    <span class="contact-label">번호: </span>
+                    <input type="text" id="q7_in" placeholder="***-***-****">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 8. 보호구를 착용하지 않고 유해물질을 사용한 경우 인체에 미치는 영향으로 옳지 않은 것은?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="q8" value="1"> 1. 건강장해 발생</label>
+                    <label><input type="radio" name="q8" value="2"> 2. 사망</label>
+                    <label><input type="radio" name="q8" value="3"> 3. 활력 증가</label>
+                    <label><input type="radio" name="q8" value="4"> 4. 만성중독자 발생</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 9. 응급처치 및 대피 요령에 관한 사항으로 옳지 않은 것은?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="q9" value="1"> 1. 호흡기를 보호하고 대피한다.</label>
+                    <label><input type="radio" name="q9" value="2"> 2. 피부가 노출되지 않도록 한다.</label>
+                    <label><input type="radio" name="q9" value="3"> 3. 작업을 마무리하고 대피한다.</label>
+                    <label><input type="radio" name="q9" value="4"> 4. 안전한곳으로 이동한 후 신고한다.</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>문제 10. 작업장 내 환기 등의 조치를 하기 위함으로 알맞은 것은?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="q10" value="1"> 1. 샤워시설</label>
+                    <label><input type="radio" name="q10" value="2"> 2. 소화기</label>
+                    <label><input type="radio" name="q10" value="3"> 3. 보건조치</label>
+                    <label><input type="radio" name="q10" value="4"> 4. 국소배기장치</label>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn">제출하기</button>
+        </form>
+
+        <div id="resultMessage" class="hidden">
+            <h3>제출이 완료되었습니다.</h3>
+            <p style="font-size: 20px; font-weight: bold; color: #d93025; margin-top: 10px;">
+                내 점수: <span id="scoreDisplay">0</span> / 100점
+            </p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
