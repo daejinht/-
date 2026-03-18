@@ -21,6 +21,8 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     const now = new Date();
     const timeString = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
     const userName = document.getElementById('username').value;
+    const department = document.getElementById('department').value;
+    const role = document.getElementById('role').value; 
 
 
     const q1_raw_inputs = [
@@ -34,11 +36,11 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
 
 
     const q1_concept_groups = [
-        ["철거스티커1.5m", "철거스티커1.5"], // 1번 개념
-        ["철거링체결"],                     // 2번 개념
-        ["전용tool", "전용툴"],             // 3번 개념
-        ["45밴딩"],                         // 4번 개념
-        ["스티커중간부위절단", "중간부위절단"]   // 5번 개념
+        ["철거스티커1.5m", "철거스티커1.5"], 
+        ["철거링체결"],                     
+        ["전용tool", "전용툴"],             
+        ["45밴딩"],                         
+        ["스티커중간부위절단", "중간부위절단"]   
     ];
 
     let q1_matchCount = 0;
@@ -78,14 +80,14 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     userAnswers.ans6 = q6_raw_input;
     const q6_input = q6_raw_input.replace(/\s+/g, '').toLowerCase();
 
-    // 🌟 3가지 필수품 (케미칼 장갑은 영어/한글 혼용 대비)
+   
     const q6_concept_groups = [
         ["방독면"],
         ["보안경"],
-        ["chemical장갑", "케미칼장갑"] // 둘 중 하나만 적어도 인정!
+        ["chemical장갑", "케미칼장갑"] 
     ];
 
-    // 모든(every) 필수품 그룹에 대해, 어느 하나라도(some) 포함되어 있는지 검사
+    // 
     const q6_isCorrect = q6_concept_groups.every(group => 
         group.some(synonym => q6_input.includes(synonym))
     );
@@ -109,6 +111,8 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
 
     const payload = {
         name: userName,
+        department: department, 
+        role: role,
         score: score,
         time: timeString,
         uid: uid,
