@@ -147,7 +147,17 @@
             </p>
         </div>
     </div>
+<script>
+        // 1. 마우스 우클릭 방지
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
 
+        // 2. 키보드 복사(Ctrl+C), 잘라내기(Ctrl+X), 붙여넣기(Ctrl+V) 방지
+        document.addEventListener('copy', function(e) { e.preventDefault(); });
+        document.addEventListener('cut', function(e) { e.preventDefault(); });
+        document.addEventListener('paste', function(e) { e.preventDefault(); });
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
