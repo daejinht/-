@@ -38,8 +38,8 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
     const q1_concept_groups = [
         ["철거스티커1.5m", "철거스티커1.5"], 
         ["철거링체결"],                     
-        ["전용tool", "전용툴"],             
-        ["45밴딩"],                         
+        ["전용tool", "전용툴","전용공구"],             
+        ["45밴딩","45도밴딩"],                         
         ["스티커중간부위절단", "중간부위절단"]   
     ];
 
@@ -82,9 +82,9 @@ document.getElementById('quizForm').addEventListener('submit', async function(ev
 
    
     const q6_concept_groups = [
-        ["방독면"],
+        ["방독면","방독마스크"],
         ["보안경"],
-        ["chemical장갑", "케미칼장갑"] 
+        ["chemical장갑", "케미칼장갑","케미컬장갑"] 
     ];
 
     // 
